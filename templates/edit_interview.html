@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Interview</title>
+</head>
+<body>
+    <h1>Edit Interview</h1>
+    <form method="POST">
+        <label>Candidate Name:</label>
+        <input type="text" name="candidate_name" value="{{ interview.candidate_name }}" required><br>
+        <label>Company Name:</label>
+        <input type="text" name="company_name" value="{{ interview.company_name }}" required><br>
+        <label>Application Date:</label>
+        <input type="date" name="application_date" value="{{ interview.application_date }}" required><br>
+        <label>Status:</label>
+        <input type="text" name="status" value="{{ interview.status }}"><br>
+        <label>Notes:</label>
+        <textarea name="notes">{{ interview.notes }}</textarea><br>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
+

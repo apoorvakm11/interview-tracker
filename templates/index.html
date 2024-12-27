@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interview Tracker</title>
+</head>
+<body>
+    <h1>Interview Tracker</h1>
+    <a href="/add">Add Interview</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Candidate</th>
+                <th>Company</th>
+                <th>Application Date</th>
+                <th>Status</th>
+                <th>Notes</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for interview in interviews %}
+            <tr>
+                <td>{{ interview.id }}</td>
+                <td>{{ interview.candidate_name }}</td>
+                <td>{{ interview.company_name }}</td>
+                <td>{{ interview.application_date }}</td>
+                <td>{{ interview.status }}</td>
+                <td>{{ interview.notes }}</td>
+                <td>
+                    <a href="/edit/{{ interview.id }}">Edit</a> |
+                    <a href="/delete/{{ interview.id }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+<link rel="stylesheet" href="/static/style.css">
